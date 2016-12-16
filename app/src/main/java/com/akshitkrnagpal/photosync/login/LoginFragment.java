@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +46,6 @@ public class LoginFragment extends Fragment {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 Toast.makeText(getActivity(), "Login Successfull" , Toast.LENGTH_LONG).show();
-                Log.e("loginResult",loginResult.toString());
             }
 
             @Override
@@ -66,7 +64,6 @@ public class LoginFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.e("onActivityResult","called");
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }
