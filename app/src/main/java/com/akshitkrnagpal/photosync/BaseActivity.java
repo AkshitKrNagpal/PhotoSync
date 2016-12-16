@@ -1,12 +1,16 @@
 package com.akshitkrnagpal.photosync;
 
+import android.app.Activity;
 import android.os.Bundle;
 
-public class SplashScreenActivity extends BaseActivity {
+import com.facebook.FacebookSdk;
+
+
+public class BaseActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        FacebookSdk.sdkInitialize(getApplicationContext());
     }
 }
