@@ -15,9 +15,9 @@
     <fragment
         android:name="com.akshitkrnagpal.photosync.login.LoginFragment"
         android:id="@+id/loginFragment"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_login" />
 
 
 </LinearLayout>
