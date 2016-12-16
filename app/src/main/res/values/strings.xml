@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">PhotoSync</string>
+
+
+    <!--
+
+    This comment contains content of sensitive_data.xml which cannot be commited for security purposes
+
+    <string name="facebook_app_id">FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fbFACEBOOK_APP_ID</string>
+    -->
+
 </resources>
