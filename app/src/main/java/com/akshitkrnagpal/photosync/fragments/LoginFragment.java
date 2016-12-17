@@ -1,4 +1,4 @@
-package com.akshitkrnagpal.photosync.login;
+package com.akshitkrnagpal.photosync.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
