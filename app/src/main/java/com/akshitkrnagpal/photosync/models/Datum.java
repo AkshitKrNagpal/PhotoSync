@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Datum {
 
-    @SerializedName("created_time")
+    @SerializedName("cover_photo")
     @Expose
-    private String createdTime;
+    private CoverPhoto coverPhoto;
     @SerializedName("name")
     @Expose
     private String name;
@@ -16,12 +16,12 @@ public class Datum {
     @Expose
     private String id;
 
-    public String getCreatedTime() {
-        return createdTime;
+    public CoverPhoto getCoverPhoto() {
+        return coverPhoto;
     }
 
-    public void setCreatedTime(String createdTime) {
-        this.createdTime = createdTime;
+    public void setCoverPhoto(CoverPhoto coverPhoto) {
+        this.coverPhoto = coverPhoto;
     }
 
     public String getName() {
