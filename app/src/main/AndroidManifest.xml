@@ -33,9 +33,12 @@
             </intent-filter>
         </activity>
 
-        <!-- Facebook Login end-->
+        <!-- Facebook Login end -->
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+
+        <activity android:name=".SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
