@@ -5,6 +5,14 @@
     android:layout_marginTop="16dp"
     tools:context="com.akshitkrnagpal.photosync.fragments.GalleryFragment">
 
+    <ListView
+        android:id="@+id/albums_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+
+
+    </ListView>
 
 </ScrollView>

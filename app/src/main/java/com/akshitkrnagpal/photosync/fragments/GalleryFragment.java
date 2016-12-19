@@ -2,25 +2,22 @@ package com.akshitkrnagpal.photosync.fragments;
 
 
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.akshitkrnagpal.photosync.R;
+import com.akshitkrnagpal.photosync.adapters.AlbumsAdapter;
 import com.akshitkrnagpal.photosync.models.AlbumsResponse;
-import com.akshitkrnagpal.photosync.models.Datum;
 import com.akshitkrnagpal.photosync.network.API;
 import com.facebook.AccessToken;
-import com.facebook.CallbackManager;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
-import com.squareup.picasso.Picasso;
 
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,9 +59,9 @@ public class GalleryFragment extends Fragment {
             int code = response.code();
             if (code == 200) {
                 AlbumsResponse albumsResponse = response.body();
-
-                // Response recieved..
-
+                AlbumsAdapter albumsAdapter = new AlbumsAdapter(getActivity(),albumsResponse.getData());
+                ListView listView = (ListView) getActivity().findViewById(R.id.albums_list);
+                listView.setAdapter(albumsAdapter);
             } else {
                 Toast.makeText(getActivity(), "Did not work: " + code , Toast.LENGTH_LONG).show();
             }
@@ -72,7 +69,7 @@ public class GalleryFragment extends Fragment {
 
         @Override
         public void onFailure(retrofit2.Call<AlbumsResponse> call, Throwable t) {
-            Toast.makeText(getActivity(), "Did not work " +  t.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Did not work " +  t.getMessage(), Toast.LENGTH_LONG).show();
         }
     };
 
