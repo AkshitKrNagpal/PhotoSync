@@ -47,6 +47,9 @@ public class GalleryFragment extends Fragment {
 
                     retrofit2.Call<AlbumsResponse> albumsResponseCall = api.getAlbums(AccessToken.getCurrentAccessToken().getToken());
                     albumsResponseCall.enqueue(callback);
+                } else {
+                    ListView listView = (ListView) getActivity().findViewById(R.id.albums_list);
+                    listView.setAdapter(null);
                 }
             }
         };
